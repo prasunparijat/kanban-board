@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Workflow - Kanban Board - The better to do list 🗒️
 
-## Getting Started
+## How to use this ?
 
-First, run the development server:
+To get started - install all the dependencies via : `npm i` or any other package manager
 
 ```bash
 npm run dev
@@ -16,21 +16,25 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Takeaways :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Usage of the custom data attributes in HTML element - Just pass `data-[keyname]={keyvalue}` as an attribute in the HTML tag and this data can be retreived whenver required. In HTML5, custom attributes that start with data- are used to store custom data in an HTML element. These attributes are not part of the standard HTML attributes, but they can be used to store additional information about an element.
 
-## Learn More
+```html
+<div
+  data-id="123"
+  data-name="John Doer"
+>
+  Hello, world!
+</div>
+```
 
-To learn more about Next.js, take a look at the following resources:
+- Every event data can also carry metadata - like the context of the element on which the mouseDown (click) started and the other events like mouseDown (click leave) etc,. to utilise that info to create the action required.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Framer motion's contianers like `motion.{HTML_TAG}` can utilise the layout atrribute to hanle the change in the layout without explicitly mentioning the aniamtion to be done - the re-arragements of the cards.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `layoutId={SOME_UNIQUE_ID}` is requried by framer motion to handle similar components restructing int he flex or grid layout.
 
-## Deploy on Vercel
+- Prop drilling till 2 layers is fine. Even the passing of the reference to a set function. useCallback can be used to negate the rerender of the child in this subsequent layers by passing down the memoized reference to the function for performance gains
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Further work : Implement the SSO layer to provide the login capability along with the DB to store the state of the board remotely.
