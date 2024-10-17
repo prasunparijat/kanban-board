@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 'use client';
 import React, { useEffect, useState } from 'react';
 import { FaFire, FaPlus } from 'react-icons/fa';
@@ -18,6 +19,8 @@ const Board = () => {
   // will contain all the functionality of the board - as well as the UI - give a padding for each enclosing container for breathing - both x and y axes should be scrollable on overflow
   useEffect(() => {
     hasChecked && localStorage.setItem('cards', JSON.stringify(cards));
+    return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cards]);
 
   useEffect(() => {
