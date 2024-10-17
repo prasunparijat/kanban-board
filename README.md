@@ -37,4 +37,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - Prop drilling till 2 layers is fine. Even the passing of the reference to a set function. useCallback can be used to negate the rerender of the child in this subsequent layers by passing down the memoized reference to the function for performance gains
 
-- Further work : Implement the SSO layer to provide the login capability along with the DB to store the state of the board remotely.
+- Further work : Implement the SSO layer to provide the login capability along with the DB to store the state of the board remotely. Only supports dektop drag and drop- mouseDown()
